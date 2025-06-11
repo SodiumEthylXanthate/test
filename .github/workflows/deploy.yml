@@ -27,7 +27,10 @@ jobs:
       run: aws sts get-caller-identity
 
     - name: s3 ls
-      run: aws s3 sync s3://sitee47c1679c9f70e53 ./ttt
+      run: aws s3 ls s3://sitee47c1679c9f70e53/css
 
-    - name: please work
-      run: ls ./ttt
+    - name: s3 ls
+      run: aws s3 ls s3://sitee47c1679c9f70e53/images
+
+    - name: s3 ls
+      run: aws s3 ls s3://sitee47c1679c9f70e53/js
