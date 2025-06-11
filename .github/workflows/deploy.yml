@@ -27,4 +27,7 @@ jobs:
       run: aws sts get-caller-identity
 
     - name: s3 ls
-      run: aws s3 ls s3://sitee47c1679c9f70e53
+      run: aws s3 sync s3://sitee47c1679c9f70e53 ./ttt
+
+    - name: please work
+      run: ls ./ttt
