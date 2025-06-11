@@ -25,3 +25,6 @@ jobs:
 
     - name: Verify role was assumed
       run: aws sts get-caller-identity
+
+    - name: s3 ls
+      run: aws s3 ls
