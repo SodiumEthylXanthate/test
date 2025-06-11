@@ -1,4 +1,4 @@
-name: Deploy from Corgi Branch
+name: corgi
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
     - name: Configure AWS credentials via OIDC
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: arn:aws:iam::385122037426:role/cicd_role  # Replace with your role ARN
+        role-to-assume: arn:aws:iam::385122037426:role/cicd-policy  # Replace with your role ARN
         aws-region: us-east-1  # Or your region
 
     - name: Verify role was assumed
