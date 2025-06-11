@@ -26,14 +26,5 @@ jobs:
     - name: Verify role was assumed
       run: aws sts get-caller-identity
 
-    - name: aws cloudfront list-distributions
-      run: aws cloudfront list-distributions
-
     - name: s3 ls
-      run: aws s3 ls
-
-    - name: lambdas
-      run: aws lambda list-functions
-    
-    - name: ec2
-      run: aws ec2 describe-instances
+      run: aws s3 ls s3://sitee47c1679c9f70e53.s3.us-east-1.amazonaws.com
