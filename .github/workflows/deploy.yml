@@ -1,0 +1,27 @@
+name: Deploy from Corgi Branch
+
+on:
+  push:
+    branches:
+      - corgi
+
+permissions:
+  id-token: write     # Needed to request OIDC token
+  contents: read      # Needed to checkout code
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials via OIDC
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: arn:aws:iam::385122037426:role/GitHubActionsRole  # Replace with your role ARN
+        aws-region: us-east-1  # Or your region
+
+    - name: Verify role was assumed
+      run: aws sts get-caller-identity
