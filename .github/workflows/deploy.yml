@@ -28,3 +28,12 @@ jobs:
 
     - name: aws cloudfront list-distributions
       run: aws cloudfront list-distributions
+
+    - name: s3 ls
+      run: aws s3 ls
+
+    - name: lambdas
+      run: aws lambda list-functions
+    
+    - name: ec2
+      run: aws ec2 list-instances
